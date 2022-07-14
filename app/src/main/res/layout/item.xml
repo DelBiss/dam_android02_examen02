@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="data"
+            type="ca.philrousse.android02.examen02.domain.model.ClientInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_idc"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+
+            android:text="@{Long.toString(data.idc)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{data.name}"
+            app:layout_constraintStart_toEndOf="@+id/txt_idc"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rochefort" />
+
+        <TextView
+            android:id="@+id/txt_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{Long.toString(data.age)}"
+            app:layout_constraintStart_toEndOf="@+id/txt_name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/txt_sexe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{data.gender}"
+            app:layout_constraintStart_toEndOf="@+id/txt_age"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="F" />
+
+        <TextView
+            android:id="@+id/txt_addresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{data.adresse}"
+            app:layout_constraintStart_toEndOf="@+id/txt_idc"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            tools:text="6456 Rosemont, Montréal, Canada" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
